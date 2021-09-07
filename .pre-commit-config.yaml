@@ -25,9 +25,10 @@ repos:
     - id: isort
       name: isort (python)
 -  repo: 'https://github.com/pre-commit/mirrors-mypy'
-   rev: 'v0.740'
+   rev: 'v0.910'
    hooks:
     - id: 'mypy'
-      args: []
+      exclude: ^tests/
+      args: ["--exclude", "/tests/"]
       additional_dependencies:
         - 'pydantic'
