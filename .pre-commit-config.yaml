@@ -19,11 +19,9 @@ repos:
     - id: flake8
       files: ^server/
       name: flake8
-      entry: bash -c 'poetry run flakehell lint "$@"'
+      entry: poetry run flakehell lint
       language: system
       types: [python]
-      require_serial: true
-      verbose: true
 -  repo: https://github.com/pycqa/isort
    rev: 5.9.3
    hooks:
@@ -34,7 +32,7 @@ repos:
     - id: mypy
       files: ^server/
       name: mypy
-      entry: bash -c 'poetry run mypy --config-file mypy.ini "$@"'
+      entry: poetry run mypy --config-file mypy.ini
       language: system
       types: [python]
       require_serial: true
